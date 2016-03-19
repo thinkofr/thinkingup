@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>纯css三层侧边栏</title>
+	<style type="text/css">
+		.nav1{margin: 100px 0 0 50px;}
+		*{margin: 0;padding: 0;font-size: 14px;font-family: '微软雅黑'}
+		ul{list-style: none;background: #777;}
+		.nav1 a{display: block;text-decoration: none;width: 110px;height: 36px;line-height:36px;text-align: center;color: #000;}
+		.nav3 a{width: 230px;}
+		.nav1 a:hover{background-color: #f00;color: #fff;}
+		.nav1 li{position: relative;}
+		.nav1{width: 110px;}
+		.li1:hover{background-color: #999;}
+		.li2:hover{background-color: #bbb;}
+		.nav1 ul{position:absolute;left: 109px;top: 0px;display: none;}
+		.li1:hover .nav2{display: block;background-color: #999;}
+		.li2:hover .nav3{display: block;background-color: #bbb;}
+		/*下面对宽度进行调整*/
+		.huoying .li2>a{width: 140px;}
+		.huoying .nav3{left: 139px;}
+		.huoying .li3>a{width: 120px;}
+		.sishen .li3>a{width: 120px;}
+		.yinhun .li3>a{width: 120px;}
+		.yaowei .li3>a{width: 80px;}
+		/*总结：
+			1.中心思想是ul-li-a
+			2.绝对定位
+			3.颜色渐进
+			4.display:none时候隐藏元素;
+			5.li:hover时，只要以其为容器的元素被选中，它就改变;
+		*/
+	</style>
+</head>
+<body>
+	<ul class="nav1">
+		<li class="li1 haizei"><a href="">海贼王</a>
+			<ul class="nav2">
+				<li class="li2"><a href="">草帽海贼团</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">“草帽”    蒙奇·D·路飞</a></li>
+						<li class="li3"><a href="">“海贼猎人”罗罗诺亚·索隆</a></li>
+						<li class="li3"><a href="">“小贼猫”  娜美</a></li>
+						<li class="li3"><a href="">“勇敢的海上战士”乌索普</a></li>
+						<li class="li3"><a href="">“黑足”    山治</a></li>
+						<li class="li3"><a href="">托尼托尼·乔巴</a></li>
+						<li class="li3"><a href="">“恶魔之子”妮可·罗宾</a></li>
+						<li class="li3"><a href="">“变态改造人”弗兰奇</a></li>
+						<li class="li3"><a href="">“鼻歌”布鲁克</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">现任王下七武海</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">“暴君”巴索罗米·熊</a></li>
+						<li class="li3"><a href="">“海贼女帝”波雅·汉库克</a></li>
+						<li class="li3"><a href="">“鹰眼”乔拉可尔·米霍克</a></li>
+						<li class="li3"><a href="">“白胡子二世”爱德华·威布尔</a></li>
+						<li class="li3"><a href="">“鹰眼”乔拉可尔·米霍克</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">四皇</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">“白胡子”爱德华·纽盖特（已故）</a></li>
+						<li class="li3"><a href="">“红发”香克斯</a></li>
+						<li class="li3"><a href="">“BIG·MAM”夏洛特·玲玲</a></li>
+						<li class="li3"><a href="">“百兽”凯多</a></li>
+						<li class="li3"><a href="">“黑胡子”马歇尔·D·蒂奇</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">海军</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">佛之战国</a></li>
+						<li class="li3"><a href="">“铁拳”卡普</a></li>
+						<li class="li3"><a href="">“赤犬”萨卡斯基</a></li>
+						<li class="li3"><a href="">“青雉”库赞</a></li>
+						<li class="li3"><a href="">“黄猿”博尔萨利诺</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">革命军</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">蒙奇·D·龙</a></li>
+						<li class="li3"><a href="">萨博</a></li>
+						<li class="li3"><a href="">安布里奥·伊万科夫</a></li>
+						<li class="li3"><a href="">依玛祖娜</a></li>
+						<li class="li3"><a href="">巴索罗米·熊</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>		
+		<li class="li1 huoying" id="huoying"><a href="">火影忍者</a>
+			<ul class="nav2">
+				<li class="li2"><a href="">第七班（鸣人班）</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">旗木卡卡西</a></li>
+						<li class="li3"><a href="">漩涡鸣人</a></li>
+						<li class="li3"><a href="">宇智波佐助</a></li>
+						<li class="li3"><a href="">春野樱</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">第三班（小李班）</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">迈特凯</a></li>
+						<li class="li3"><a href="">李洛克</a></li>
+						<li class="li3"><a href="">日向宁次</a></li>
+						<li class="li3"><a href="">天天</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">第八班（雏田班）</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">夕阳红</a></li>
+						<li class="li3"><a href="">日向雏田</a></li>
+						<li class="li3"><a href="">油女志乃</a></li>
+						<li class="li3"><a href="">犬冢牙</a></li>
+						<li class="li3"><a href="">赤丸</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">第十班（鹿丸班）</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">猿飞阿斯玛</a></li>
+						<li class="li3"><a href="">奈良鹿丸</a></li>
+						<li class="li3"><a href="">秋道丁次</a></li>
+						<li class="li3"><a href="">山中井野</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="li1 sishen"><a href="">死神</a>
+			<ul class="nav2">
+				<li class="li2"><a href="">现世</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">黑崎一护</a></li>
+						<li class="li3"><a href="">井上纱织</a></li>
+						<li class="li3"><a href="">石田雨龙</a></li>
+						<li class="li3"><a href="">茶渡泰虎</a></li> 
+					</ul>
+				</li>
+				<li class="li2"><a href="">流魂街</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">志波空鹤</a></li>
+						<li class="li3"><a href="">志波岩鹫</a></li>
+						<li class="li3"><a href="">柴田勇一</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">瀞灵廷</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">四枫院夕四郎</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">护廷十三队</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">更木剑八</a></li>
+						<li class="li3"><a href="">草鹿八千流</a></li>
+						<li class="li3"><a href="">日番谷冬狮郎</a></li>
+						<li class="li3"><a href="">朽木白哉</a></li>
+						<li class="li3"><a href="">京乐春水</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">虚</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">蓝染惣右介</a></li>
+						<li class="li3"><a href="">市丸银</a></li>
+						<li class="li3"><a href="">东仙要</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">其他重要角色</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">浦原喜助</a></li>
+						<li class="li3"><a href="">四枫院夜一</a></li>
+						<li class="li3"><a href="">黑崎一心</a></li>
+						<li class="li3"><a href="">黑崎夏梨</a></li>
+						<li class="li3"><a href="">黑崎游子</a></li>
+					</ul>
+				</li>
+				</li>
+			</ul>
+		</li>
+		<li class="li1 yinhun"><a href="">银魂</a>
+			<ul class="nav2">
+				<li class="li2"><a href="">万事屋</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">坂田银时</a></li>
+						<li class="li3"><a href="">志村新八</a></li>
+						<li class="li3"><a href="">神乐</a></li>
+						<li class="li3"><a href="">定春</a></li>						
+					</ul>
+				</li>
+				<li class="li2"><a href="">真选组</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">近藤勋</a></li>
+						<li class="li3"><a href="">土方十四郎</a></li>
+						<li class="li3"><a href="">冲田总悟</a></li>
+						<li class="li3"><a href="">山崎退</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">桂一派攘夷派</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">桂小太郎</a></li>
+						<li class="li3"><a href="">伊丽莎白</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">鬼兵队</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">高杉晋助</a></li>
+						<li class="li3"><a href="">河上万齐</a></li>
+						<li class="li3"><a href="">来岛又子</a></li>
+						<li class="li3"><a href="">武市变平太</a></li>
+						<li class="li3"><a href="">冈田似藏</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">快援队</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">坂本辰马</a></li>
+						<li class="li3"><a href="">陆奥</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">其他角色</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">神乐</a></li>
+						<li class="li3"><a href="">志村妙</a></li>
+						<li class="li3"><a href="">猿飞菖蒲</a></li>
+						<li class="li3"><a href="">月咏</a></li>
+						<li class="li3"><a href="">柳生九兵卫</a></li>
+						<li class="li3"><a href="">长谷川泰三</a></li>
+					</ul>
+				</li>
+				</li>
+			</ul>
+		</li>
+		<li class="li1 yaowei"><a href="">妖精的尾巴</a>
+			<ul class="nav2">
+				<li class="li2"><a href="">妖精的尾巴</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">纳兹</a></li>
+						<li class="li3"><a href="">露西</a></li>
+						<li class="li3"><a href="">艾露莎</a></li>
+						<li class="li3"><a href="">格雷</a></li>
+						<li class="li3"><a href="">温蒂</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">蛇姬之鳞</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">鸠拉</a></li>
+						<li class="li3"><a href="">利欧</a></li>
+						<li class="li3"><a href="">雪莉娅</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">青色天马</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">一夜</a></li>
+						<li class="li3"><a href="">珍妮</a></li>
+						<li class="li3"><a href="">响</a></li>
+						<li class="li3"><a href="">莲</a></li>
+						<li class="li3"><a href="">伊凡</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">人鱼之踵</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">神乐</a></li>
+						<li class="li3"><a href="">米莉安娜</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">剑齿之虎</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">斯汀</a></li>
+						<li class="li3"><a href="">罗格</a></li>
+						<li class="li3"><a href="">雪乃</a></li>
+						<li class="li3"><a href="">路法斯</a></li>
+						<li class="li3"><a href="">米涅芭</a></li>
+					</ul>
+				</li>
+				<li class="li2"><a href="">四头猎犬</a>
+					<ul class="nav3">
+						<li class="li3"><a href="">帕卡斯</a></li>
+					</ul>
+				</li>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
